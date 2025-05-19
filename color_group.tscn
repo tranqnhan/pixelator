@@ -14,4 +14,5 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "—"
 
+[connection signal="color_changed" from="ColorPickerButton" to="." method="_on_color_picker_button_color_changed"]
 [connection signal="pressed" from="MinusButton" to="." method="_on_minus_button_pressed"]

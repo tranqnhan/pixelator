@@ -1,11 +1,17 @@
 extends Control
 
+signal recolor(num_colors_added: int)
+
+
 @export var color_group : PackedScene
+
 
 var MAX_COLORS = 256
 var colors_container
 var settings_button 
 var textures
+var num_colors: int = 0
+
 
 func _ready():
 	colors_container = $VBoxContainer/VBoxContainer/HboxContainer/HBoxContainer/ScrollContainer/ColorsContainer
@@ -42,7 +48,7 @@ func _on_file_dialog_file_selected(path: String) -> void:
 	textures.texture = load_image(path)
 
 
-func _on_apply_colors_button_pressed() -> void:
+func apply_recolor():
 	var colors = []
 	var guard = 0
 	for i in colors_container.get_children():
@@ -52,17 +58,22 @@ func _on_apply_colors_button_pressed() -> void:
 		else:
 			guard += 1
 	
-	var num_colors = guard
 	var material : Material = textures.get_material()
 	material.set("shader_parameter/colors", colors)
 	material.set("shader_parameter/num_colors", num_colors)
-	# SHADER
 
+
+func _on_recolor(num_colors_added: int) -> void:
+	num_colors += num_colors_added
+	apply_recolor()
+	
 
 func _on_add_button_pressed() -> void:
 	if (len(colors_container.get_children()) < MAX_COLORS):
 		var color = color_group.instantiate()
+		color.params(recolor)
 		colors_container.add_child(color)
+		recolor.emit(1)
 
 
 func _on_settings_button_pressed() -> void:

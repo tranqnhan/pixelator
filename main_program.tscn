@@ -83,20 +83,14 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Import Picture"
 
-[node name="ApplyColorsButton" type="Button" parent="VBoxContainer/VBoxContainer/HboxContainer/ControlsContainer"]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Apply Colors"
-
 [node name="SettingsButton" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 text = "▲"
 
+[connection signal="recolor" from="." to="." method="_on_recolor"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/HboxContainer/HBoxContainer/AddButton" to="." method="_on_add_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/HboxContainer/ControlsContainer/ImportPictureButton" to="." method="_on_import_picture_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/HboxContainer/ControlsContainer/ApplyColorsButton" to="." method="_on_apply_colors_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
