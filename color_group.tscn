@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://qjesysgqygca"]
+
+[ext_resource type="Script" uid="uid://k7nx6uk7vbvx" path="res://color_group.gd" id="1_h0s85"]
+
+[node name="ColorGroup" type="VBoxContainer"]
+script = ExtResource("1_h0s85")
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="MinusButton" type="Button" parent="."]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "—"
+
+[connection signal="pressed" from="MinusButton" to="." method="_on_minus_button_pressed"]
