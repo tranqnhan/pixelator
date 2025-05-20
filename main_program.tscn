@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dmlln4d56nx0d" path="res://main_program.gd" id="1_m4vnr"]
 [ext_resource type="PackedScene" uid="uid://qjesysgqygca" path="res://color_group.tscn" id="2_jd1i1"]
-[ext_resource type="Shader" uid="uid://baex44ehqxrlm" path="res://pixel_image.gdshader" id="3_2s4yl"]
+[ext_resource type="Shader" uid="uid://baex44ehqxrlm" path="res://shaders/nearest_color.gdshader" id="3_2s4yl"]
 [ext_resource type="Texture2D" uid="uid://chbeqxxrnrgxu" path="res://icon.svg" id="4_g1eed"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g1eed"]
@@ -68,20 +68,26 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="AddButton" type="Button" parent="VBoxContainer/VBoxContainer/HboxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 120)
+custom_minimum_size = Vector2(45, 60)
 layout_mode = 2
 text = "＋"
 
-[node name="ControlsContainer" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/HboxContainer"]
+[node name="ControlsContainer" type="VBoxContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+size_flags_horizontal = 0
 alignment = 1
 
-[node name="ImportPictureButton" type="Button" parent="VBoxContainer/VBoxContainer/HboxContainer/ControlsContainer"]
+[node name="ClearColors" type="Button" parent="VBoxContainer/ControlsContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "clear all colors"
+
+[node name="ImportPictureButton" type="Button" parent="VBoxContainer/ControlsContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Import Picture"
+text = "import picture"
 
 [node name="SettingsButton" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
@@ -92,5 +98,6 @@ text = "▲"
 [connection signal="recolor" from="." to="." method="_on_recolor"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
 [connection signal="pressed" from="VBoxContainer/VBoxContainer/HboxContainer/HBoxContainer/AddButton" to="." method="_on_add_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/HboxContainer/ControlsContainer/ImportPictureButton" to="." method="_on_import_picture_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ControlsContainer/ClearColors" to="." method="_on_clear_colors_pressed"]
+[connection signal="pressed" from="VBoxContainer/ControlsContainer/ImportPictureButton" to="." method="_on_import_picture_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]

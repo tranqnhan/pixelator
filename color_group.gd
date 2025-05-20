@@ -1,4 +1,4 @@
-extends VBoxContainer
+extends HBoxContainer
 
 
 var recolor: Signal
@@ -26,3 +26,8 @@ func get_color():
 
 func _on_color_picker_button_color_changed(color: Color) -> void:
 	self.recolor.emit(0)
+
+
+func _on_color_picker_button_pressed() -> void:
+	#$MinusButton.visible = true
+	pass

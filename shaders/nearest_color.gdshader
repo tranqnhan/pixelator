@@ -18,14 +18,7 @@ void fragment() {
 			}
 		}
 		COLOR = color;
-		
-		// Pixelate
-		
-		
-		
 	}
-	
-	
 }
 
 //void light() {

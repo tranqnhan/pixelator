@@ -2,17 +2,24 @@
 
 [ext_resource type="Script" uid="uid://k7nx6uk7vbvx" path="res://color_group.gd" id="1_h0s85"]
 
-[node name="ColorGroup" type="VBoxContainer"]
+[node name="ColorGroup" type="HBoxContainer"]
+offset_right = 50.0
+offset_bottom = 50.0
 script = ExtResource("1_h0s85")
 
 [node name="ColorPickerButton" type="ColorPickerButton" parent="."]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="MinusButton" type="Button" parent="."]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
+[node name="Node" type="Node2D" parent="."]
+
+[node name="MinusButton" type="Button" parent="Node"]
+offset_left = 32.0
+offset_top = -8.0
+offset_right = 56.0
+offset_bottom = 23.0
 text = "—"
 
 [connection signal="color_changed" from="ColorPickerButton" to="." method="_on_color_picker_button_color_changed"]
-[connection signal="pressed" from="MinusButton" to="." method="_on_minus_button_pressed"]
+[connection signal="pressed" from="ColorPickerButton" to="." method="_on_color_picker_button_pressed"]
+[connection signal="pressed" from="Node/MinusButton" to="." method="_on_minus_button_pressed"]

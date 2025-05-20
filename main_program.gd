@@ -66,7 +66,7 @@ func apply_recolor():
 func _on_recolor(num_colors_added: int) -> void:
 	num_colors += num_colors_added
 	apply_recolor()
-	
+
 
 func _on_add_button_pressed() -> void:
 	if (len(colors_container.get_children()) < MAX_COLORS):
@@ -79,3 +79,11 @@ func _on_add_button_pressed() -> void:
 func _on_settings_button_pressed() -> void:
 	settings_button.text = "▲" if settings_button.text == "▼" else "▼"
 	$VBoxContainer/VBoxContainer.visible = not $VBoxContainer/VBoxContainer.visible 
+
+
+func _on_clear_colors_pressed() -> void:
+	var m = 0
+	for i in colors_container.get_children():
+		i.queue_free()
+		m += 1
+	recolor.emit(-m)
