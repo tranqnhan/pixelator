@@ -1,21 +1,19 @@
-[gd_scene load_steps=6 format=4 uid="uid://iw40md2qv722"]
+[gd_scene load_steps=5 format=4 uid="uid://iw40md2qv722"]
 
-[ext_resource type="Script" uid="uid://dmlln4d56nx0d" path="res://main_program.gd" id="1_m4vnr"]
-[ext_resource type="PackedScene" uid="uid://qjesysgqygca" path="res://color_group.tscn" id="2_jd1i1"]
-[ext_resource type="Shader" uid="uid://baex44ehqxrlm" path="res://shaders/nearest_color.gdshader" id="3_2s4yl"]
-[ext_resource type="Texture2D" uid="uid://chbeqxxrnrgxu" path="res://icon.svg" id="4_g1eed"]
+[ext_resource type="Script" uid="uid://dmlln4d56nx0d" path="res://nearest_color.gd" id="1_yibnx"]
+[ext_resource type="Shader" uid="uid://baex44ehqxrlm" path="res://shaders/nearest_color.gdshader" id="3_elyxo"]
+[ext_resource type="Texture2D" uid="uid://chbeqxxrnrgxu" path="res://icon.svg" id="4_i7cy0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g1eed"]
-shader = ExtResource("3_2s4yl")
+shader = ExtResource("3_elyxo")
 shader_parameter/num_colors = 0
 shader_parameter/colors = PackedVector4Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 
-[node name="MainProgram" type="Control"]
+[node name="NearestColor" type="Control"]
 custom_minimum_size = Vector2(1200, 700)
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_m4vnr")
-color_group = ExtResource("2_jd1i1")
+script = ExtResource("1_yibnx")
 
 [node name="FileDialog" type="FileDialog" parent="."]
 title = "Open a File"
@@ -25,71 +23,93 @@ file_mode = 0
 access = 2
 filters = PackedStringArray("*.png", "*.jpg")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(600, 350)
+
 [node name="TextureRect" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_g1eed")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+layout_mode = 0
+offset_left = 536.0
+offset_top = 286.0
+offset_right = 664.0
+offset_bottom = 414.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-texture = ExtResource("4_g1eed")
-expand_mode = 2
-stretch_mode = 5
+texture = ExtResource("4_i7cy0")
+stretch_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 735.0
 grow_horizontal = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="HboxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+[node name="HboxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer/HboxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/VBoxContainer/HboxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/VBoxContainer/HboxContainer/HBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/VBoxContainer/VBoxContainer/HboxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 horizontal_scroll_mode = 2
 vertical_scroll_mode = 0
 
-[node name="ColorsContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer/HboxContainer/HBoxContainer/ScrollContainer"]
+[node name="ColorsContainer" type="HBoxContainer" parent="CanvasLayer/VBoxContainer/VBoxContainer/HboxContainer/HBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="AddButton" type="Button" parent="VBoxContainer/VBoxContainer/HboxContainer/HBoxContainer"]
+[node name="AddButton" type="Button" parent="CanvasLayer/VBoxContainer/VBoxContainer/HboxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(45, 60)
 layout_mode = 2
 text = "＋"
 
-[node name="ControlsContainer" type="VBoxContainer" parent="VBoxContainer"]
+[node name="ControlsContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 alignment = 1
 
-[node name="ClearColors" type="Button" parent="VBoxContainer/ControlsContainer"]
+[node name="ClearColorsButton" type="Button" parent="CanvasLayer/VBoxContainer/ControlsContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "clear all colors"
 
-[node name="ImportPictureButton" type="Button" parent="VBoxContainer/ControlsContainer"]
+[node name="ImportPictureButton" type="Button" parent="CanvasLayer/VBoxContainer/ControlsContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "import picture"
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+[node name="SaveButton" type="Button" parent="CanvasLayer/VBoxContainer/ControlsContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "save"
+
+[node name="ZoomSize" type="Label" parent="CanvasLayer/VBoxContainer/ControlsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "zoom"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="CanvasLayer/VBoxContainer/ControlsContainer"]
+layout_mode = 2
+min_value = 0.01
+max_value = 5.0
+step = 0.01
+value = 1.0
+
+[node name="SettingsButton" type="Button" parent="CanvasLayer/VBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -97,7 +117,9 @@ text = "▲"
 
 [connection signal="recolor" from="." to="." method="_on_recolor"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/HboxContainer/HBoxContainer/AddButton" to="." method="_on_add_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/ControlsContainer/ClearColors" to="." method="_on_clear_colors_pressed"]
-[connection signal="pressed" from="VBoxContainer/ControlsContainer/ImportPictureButton" to="." method="_on_import_picture_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/VBoxContainer/HboxContainer/HBoxContainer/AddButton" to="." method="_on_add_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/ControlsContainer/ClearColorsButton" to="." method="_on_clear_colors_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/ControlsContainer/ImportPictureButton" to="." method="_on_import_picture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/ControlsContainer/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="value_changed" from="CanvasLayer/VBoxContainer/ControlsContainer/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]

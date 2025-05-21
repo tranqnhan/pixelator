@@ -14,11 +14,10 @@ var num_colors: int = 0
 
 
 func _ready():
-	colors_container = $VBoxContainer/VBoxContainer/HboxContainer/HBoxContainer/ScrollContainer/ColorsContainer
+	colors_container = $CanvasLayer/VBoxContainer/VBoxContainer/HboxContainer/HBoxContainer/ScrollContainer/ColorsContainer
 	textures = $TextureRect
-	settings_button = $VBoxContainer/SettingsButton
+	settings_button = $CanvasLayer/VBoxContainer/SettingsButton
 	settings_button.text = "▲"
-	print(len(colors_container.get_children()))
 
 
 func load_image(path: String):
@@ -78,7 +77,8 @@ func _on_add_button_pressed() -> void:
 
 func _on_settings_button_pressed() -> void:
 	settings_button.text = "▲" if settings_button.text == "▼" else "▼"
-	$VBoxContainer/VBoxContainer.visible = not $VBoxContainer/VBoxContainer.visible 
+	$CanvasLayer/VBoxContainer.visible = not $CanvasLayer/VBoxContainer/VBoxContainer.visible 
+	$CanvasLayer/VBoxContainer/ControlsContainer.visible = not $CanvasLayer/VBoxContainer/ControlsContainer.visible 
 
 
 func _on_clear_colors_pressed() -> void:
@@ -87,3 +87,23 @@ func _on_clear_colors_pressed() -> void:
 		i.queue_free()
 		m += 1
 	recolor.emit(-m)
+
+
+func _on_save_button_pressed() -> void:
+	var subviewport = SubViewport.new()
+	var texturerect = $TextureRect.duplicate()
+	subviewport.add_child(texturerect)
+	subviewport.size = texturerect.texture.get_size()
+	subviewport.set_update_mode(subviewport.UPDATE_ONCE)
+	$CanvasLayer.add_child(subviewport)
+	texturerect.position = Vector2.ZERO
+	var texture = subviewport.get_texture()
+	await RenderingServer.frame_post_draw
+	var image = texture.get_image()
+	var image_texture = ImageTexture.create_from_image(image)
+	ResourceSaver.save(image_texture, "res://test.tres")
+	subviewport.queue_free()
+
+
+func _on_h_slider_value_changed(value: float) -> void:
+	$Camera2D.zoom = Vector2.ONE * value 
