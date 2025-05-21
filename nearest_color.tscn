@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=4 uid="uid://iw40md2qv722"]
+[gd_scene load_steps=6 format=4 uid="uid://iw40md2qv722"]
 
 [ext_resource type="Script" uid="uid://dmlln4d56nx0d" path="res://nearest_color.gd" id="1_yibnx"]
+[ext_resource type="PackedScene" uid="uid://qjesysgqygca" path="res://color_group.tscn" id="2_yibnx"]
 [ext_resource type="Shader" uid="uid://baex44ehqxrlm" path="res://shaders/nearest_color.gdshader" id="3_elyxo"]
 [ext_resource type="Texture2D" uid="uid://chbeqxxrnrgxu" path="res://icon.svg" id="4_i7cy0"]
 
@@ -14,6 +15,7 @@ custom_minimum_size = Vector2(1200, 700)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_yibnx")
+color_group = ExtResource("2_yibnx")
 
 [node name="FileDialog" type="FileDialog" parent="."]
 title = "Open a File"

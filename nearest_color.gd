@@ -77,7 +77,7 @@ func _on_add_button_pressed() -> void:
 
 func _on_settings_button_pressed() -> void:
 	settings_button.text = "▲" if settings_button.text == "▼" else "▼"
-	$CanvasLayer/VBoxContainer.visible = not $CanvasLayer/VBoxContainer/VBoxContainer.visible 
+	$CanvasLayer/VBoxContainer/VBoxContainer.visible = not $CanvasLayer/VBoxContainer/VBoxContainer.visible 
 	$CanvasLayer/VBoxContainer/ControlsContainer.visible = not $CanvasLayer/VBoxContainer/ControlsContainer.visible 
 
 
@@ -103,7 +103,10 @@ func _on_save_button_pressed() -> void:
 	var image_texture = ImageTexture.create_from_image(image)
 	ResourceSaver.save(image_texture, "res://test.tres")
 	subviewport.queue_free()
-
+	
+	PassTexture.image_texture = image_texture
+	get_tree().change_scene_to_file("res://pixelize.tscn")
+	
 
 func _on_h_slider_value_changed(value: float) -> void:
 	$Camera2D.zoom = Vector2.ONE * value 

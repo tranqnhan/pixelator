@@ -1,0 +1,92 @@
+[gd_scene load_steps=5 format=3 uid="uid://y44f3w6gqmcu"]
+
+[ext_resource type="Script" uid="uid://b6qsfp0ckpm5u" path="res://pixelize.gd" id="1_o2hrv"]
+[ext_resource type="Texture2D" uid="uid://chbeqxxrnrgxu" path="res://icon.svg" id="2_o2hrv"]
+[ext_resource type="Shader" uid="uid://bny3bw3syulk2" path="res://shaders/pixelize2.gdshader" id="2_xj5ud"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xj5ud"]
+shader = ExtResource("2_xj5ud")
+shader_parameter/pkernel_size = 0
+
+[node name="Pixelize" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o2hrv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(600, 350)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_xj5ud")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+texture = ExtResource("2_o2hrv")
+stretch_mode = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 735.0
+grow_horizontal = 2
+
+[node name="ControlsContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+alignment = 1
+
+[node name="SaveButton" type="Button" parent="CanvasLayer/VBoxContainer/ControlsContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "save"
+
+[node name="ZoomSize" type="Label" parent="CanvasLayer/VBoxContainer/ControlsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "zoom"
+horizontal_alignment = 1
+
+[node name="ZoomSlider" type="HSlider" parent="CanvasLayer/VBoxContainer/ControlsContainer"]
+layout_mode = 2
+min_value = 0.01
+max_value = 5.0
+step = 0.01
+value = 1.0
+
+[node name="KernelSize" type="Label" parent="CanvasLayer/VBoxContainer/ControlsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "kernel size"
+horizontal_alignment = 1
+
+[node name="KernelSlider" type="HSlider" parent="CanvasLayer/VBoxContainer/ControlsContainer"]
+layout_mode = 2
+max_value = 10.0
+
+[node name="SettingsButton" type="Button" parent="CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "▲"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/ControlsContainer/SaveButton" to="." method="_on_save_button_pressed"]
+[connection signal="value_changed" from="CanvasLayer/VBoxContainer/ControlsContainer/ZoomSlider" to="." method="_on_zoom_slider_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/VBoxContainer/ControlsContainer/KernelSlider" to="." method="_on_kernel_slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]

@@ -15,6 +15,10 @@ run/main_scene="uid://iw40md2qv722"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PassTexture="*res://pass_texture.gd"
+
 [display]
 
 window/size/viewport_width=1200
